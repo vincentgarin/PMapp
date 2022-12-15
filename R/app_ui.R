@@ -10,7 +10,16 @@ app_ui <- function(request) {
     golem_add_external_resources(),
     # Your application UI logic
     fluidPage(
-      titlePanel("Pearl millet agronomy and crop model prediction in India")
+      titlePanel("Pearl millet agronomy and crop model prediction in India"),
+
+      tags$img(height = 300, width = 300, src = 'www/hex-PMapp.png'),
+      tags$img(height = 300, width = 500, src = 'www/PM_field_1.jpg'),
+      tags$br(),
+      tags$br(),
+
+      # General area
+      mod_par_gen_ui("par_gen_area")
+
     )
   )
 }

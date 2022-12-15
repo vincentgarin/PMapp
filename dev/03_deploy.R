@@ -16,7 +16,9 @@
 ## Run checks ----
 ## Check the package before sending to prod
 devtools::check()
-rhub::check_for_cran()
+
+# possibility to run RCMD check on any of the R-hub architecture: Windows, macOS, Solaris, Linux
+# rhub::check_for_cran()
 
 # Deploy
 

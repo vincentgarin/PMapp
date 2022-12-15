@@ -1,17 +1,24 @@
 Package: PMapp
-Title: An Amazing Shiny App
+Title: Pearl millet agronomy and crop model prediction in India
 Version: 0.0.0.9000
-Authors@R: 
-    person(given = "firstname",
-           family = "lastname",
-           role = c("aut", "cre"),
-           email = "your@email.com")
-Description: What the package does (one paragraph).
-License: What license is it under?
+Authors@R: person('Vincent', 'Garin', email = 'vincent.garin6@gmail.com', role = c('cre', 'aut'), comment = c(ORCID = '0000-0002-5571-1841'))
+Description: This app provides interactive statistics and crop model predictions about pearl millet production in India.
+License: Apache License (>= 2)
 Imports: 
     config (>= 0.3.1),
+    dplyr,
+    ggplot2,
+    glue,
     golem (>= 0.3.5),
-    shiny (>= 1.7.1)
+    htmltools,
+    shiny (>= 1.7.1),
+    shinyWidgets
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.1
+LazyDataCompression: xz
+RoxygenNote: 7.2.3
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Depends: 
+    R (>= 2.10)
