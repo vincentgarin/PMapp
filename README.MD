@@ -1,6 +1,9 @@
 PMapp: Pearl millet agronomy and crop model prediction in India
 ====
 
+<p align="center">
+  <img src="inst/app/www/hex-PMapp.png" width="350" >
+</p>
 
 ## Overview
 
