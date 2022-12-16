@@ -6,7 +6,7 @@
 #'
 #' @noRd
 
-tab_av_sh <- function(d1, d2, v_nm = 'kha'){
+tab_av_sh <- function(d1, d2, v_nm = 'Kha'){
 
   d <- left_join(d1, d2, "dist_code") %>% ungroup() %>%
     select(state_name.x, dist_name.x, av.x, tr.x, av.y, tr.y)
