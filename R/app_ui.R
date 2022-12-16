@@ -14,7 +14,7 @@ app_ui <- function(request) {
       titlePanel("Pearl millet agronomy and crop model prediction in India"),
 
       navlistPanel(
-        "Description",
+        "General description",
 
       #### App description ####
 
@@ -54,18 +54,27 @@ app_ui <- function(request) {
 
         ),
       "General",
-      tabPanel("Area",
 
       #### General-area ####
+      tabPanel("Area",
+
       mod_par_gen_ui("par_gen_area")
 
       ),
+      #### General-production ####
       tabPanel("Production",
 
-      #### General-production ####
       mod_par_gen_ui("par_gen_prod", par_nm = 'production', unit_nm = 'tons')
 
-               )
+               ),
+      #### Crop model comparison ####
+      "Crop model Prediction",
+      tabPanel("Predicted yield and income comparison",
+
+               mod_CM_prediction_ui("CM_prediction")
+
+      )
+
       ) # end of the last tabPanel and navlistPanel
 
     )

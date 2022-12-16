@@ -36,6 +36,7 @@ golem::add_module(name = "name_of_module2", with_test = TRUE) # Name of the modu
 
 # General parameter. can be used for area, prod, yield ...
 golem::add_module(name = "par_gen", with_test = TRUE)
+golem::add_module(name = "CM_prediction", with_test = TRUE)
 
 ## Add helper functions: smaller functions
 ## Creates fct_* and utils_*
@@ -49,6 +50,7 @@ golem::add_utils("tr_f", with_test = TRUE)
 golem::add_utils("input_district", with_test = FALSE)
 golem::add_utils("year_input", with_test = FALSE)
 golem::add_utils("map_stat_input", with_test = FALSE)
+golem::add_utils("CM_options_panel", with_test = FALSE)
 
 # functions required by the first module (par_gen - area)
 golem::add_fct("average_trend", with_test = FALSE)
@@ -58,6 +60,9 @@ golem::add_fct("d_share", with_test = FALSE)
 golem::add_fct("scatplot_reg", with_test = FALSE)
 golem::add_fct("plot_map_av_sh_tr", with_test = FALSE)
 golem::add_fct("plot_map", with_test = FALSE)
+golem::add_fct("form_CM_res_tab", with_test = FALSE)
+golem::add_fct("plot_CM_map", with_test = FALSE)
+golem::add_fct("CM_get_input", with_test = FALSE)
 
 
 ## External resources
