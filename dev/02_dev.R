@@ -11,7 +11,7 @@
 #### CURRENT FILE: DEV SCRIPT #####
 ###################################
 
-setwd('C:/Users/vince/OneDrive/Documents/WD/Programming/Shiny/test/PMapp')
+setwd('C:/Users/vince/OneDrive/Documents/WD/Programming/Shiny/package/PMapp')
 library(here)
 here()
 
@@ -37,6 +37,14 @@ golem::add_module(name = "name_of_module2", with_test = TRUE) # Name of the modu
 # General parameter. can be used for area, prod, yield ...
 golem::add_module(name = "par_gen", with_test = TRUE)
 golem::add_module(name = "CM_prediction", with_test = TRUE)
+golem::add_module(name = "par_yield", with_test = TRUE)
+golem::add_module(name = "par_share", with_test = TRUE)
+golem::add_module(name = "par_comp", with_test = TRUE)
+golem::add_module(name = "soil_type", with_test = TRUE)
+golem::add_module(name = "rain_pattern", with_test = TRUE)
+golem::add_module(name = "mgt_param", with_test = TRUE)
+golem::add_module(name = "test_site", with_test = TRUE)
+golem::add_module(name = "comp_yield", with_test = TRUE)
 
 ## Add helper functions: smaller functions
 ## Creates fct_* and utils_*
@@ -45,12 +53,14 @@ golem::add_utils("helpers", with_test = TRUE)
 
 golem::add_utils("m_f", with_test = TRUE)
 golem::add_utils("tr_f", with_test = TRUE)
+golem::add_utils("tr_f_error", with_test = TRUE)
 
 # add generic functions for input
 golem::add_utils("input_district", with_test = FALSE)
 golem::add_utils("year_input", with_test = FALSE)
 golem::add_utils("map_stat_input", with_test = FALSE)
 golem::add_utils("CM_options_panel", with_test = FALSE)
+golem::add_utils("mdf_map_polygon", with_test = FALSE)
 
 # functions required by the first module (par_gen - area)
 golem::add_fct("average_trend", with_test = FALSE)
@@ -63,6 +73,14 @@ golem::add_fct("plot_map", with_test = FALSE)
 golem::add_fct("form_CM_res_tab", with_test = FALSE)
 golem::add_fct("plot_CM_map", with_test = FALSE)
 golem::add_fct("CM_get_input", with_test = FALSE)
+golem::add_fct("pie_chart", with_test = FALSE)
+golem::add_fct("plot_sel_dist", with_test = FALSE)
+golem::add_fct("comp_trend_plot", with_test = FALSE)
+golem::add_fct("plot_soil_maj", with_test = FALSE)
+golem::add_fct("plot_rain", with_test = FALSE)
+golem::add_fct("plot_mgt_pract", with_test = FALSE)
+golem::add_fct("plot_site", with_test = FALSE)
+golem::add_fct("plot_comp_yield", with_test = FALSE)
 
 
 ## External resources
@@ -80,10 +98,16 @@ setwd('C:/Users/vince/OneDrive/Documents/WD/Programming/Shiny/data/PM')
 load('PM_prod.RData')
 load('d_cr_area.RData')
 load('d_cr_prod.RData')
+load('d_cr_yield.RData')
 load('d_poly.RData')
 load('dist_list.RData')
 load('dist_list_name.RData')
 load('data_CM.RData')
+
+load('d_clu.RData')
+load('d_site.RData')
+load('site_list.RData')
+load('site_list_name.RData')
 
 setwd(here())
 
@@ -92,8 +116,12 @@ setwd(here())
 
 # need to load everything in one go. No append...
 
-usethis::use_data(PM_prod, d_cr_area, d_cr_prod, d_poly, dist_list, d_list_nm,
-                  data_CM, compress = 'xz', overwrite = TRUE, internal = TRUE)
+usethis::use_data(PM_prod, d_cr_area, d_cr_prod, d_cr_yield, d_poly, dist_list, d_list_nm,
+                  d_clu, d_site, site_list, d_site_nm, data_CM, compress = 'xz', overwrite = TRUE, internal = TRUE)
+
+
+# usethis::use_data(PM_prod, d_cr_area, d_cr_prod, d_cr_yield, d_poly, dist_list, d_list_nm,
+#                   d_clu, d_site, site_list, d_site_nm, compress = 'xz', overwrite = TRUE, internal = TRUE)
 
 # usethis::use_data(PM_prod, compress = 'xz', overwrite = TRUE, internal = TRUE)
 # usethis::use_data(d_cr_area, compress = 'xz', overwrite = TRUE, internal = TRUE)

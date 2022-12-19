@@ -22,6 +22,8 @@
 plot_map <- function(d_poly, p_val, dist_code, col_low = 'white', col_mid = NULL,
                      col_high = 'blue', v_name, main){
 
+  d_poly <- mdf_map_polygon(d_poly)
+
   p_lk <- p_val
   names(p_lk) <- dist_code
   d_poly$param <- p_lk[as.character(d_poly$dist_code)]

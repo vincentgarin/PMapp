@@ -6,9 +6,9 @@
 #'
 #' @noRd
 input_district <- function(id, label = 'Selected districts(s)',
-                           choices = d_list_nm){
+                           choices = d_list_nm, default = 'all'){
 
   selectInput(inputId = id, label = label, choices = choices, multiple = TRUE,
-              selected = 'all')
+              selected = default)
 
 }

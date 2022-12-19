@@ -9,6 +9,8 @@ plot_CM_map <- function(ptype, d_poly, dist_code,
                         p_val_yld_o1, p_val_yld_o2, p_val_yld_diff,
                         p_val_inc_o1, p_val_inc_o2, p_val_inc_diff){
 
+  d_poly <- mdf_map_polygon(d_poly)
+
   if(ptype == 'exp_yield'){
 
     # option 1
